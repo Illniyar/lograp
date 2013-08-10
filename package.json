@@ -1,0 +1,27 @@
+ {
+    "name": "lograp",
+    "version": "0.0.1",
+    "author": "illniyar",
+    "description": "Logging wrapper for winston - adds timestamp and module names to logs",
+    "main": "./lib/lograp.js",
+
+    "dependencies": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Illniyar/lograp.git"
+    },
+    "licenses": {
+        "type": "MIT",
+        "url": "http://opensource.org/licenses/MIT"        
+    },
+    "homepage": "https://github.com/Illniyar/lograp",
+    "devDependencies": [
+        "winston",
+		"mocha",
+		"chai"
+    ],
+    "scripts": {
+        "test": "mocha --harmony-proxies --recursive --reporter Spec"
+    }
+ }
