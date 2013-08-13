@@ -8,6 +8,7 @@ Currently it:
 * always adds the name of the module you called the logger from and the current timestamp.
 	* you can provide a rootPath so that the module name is relative
 	* you can provide a name for the logger to use instead of it using the relative path.
+* prints stack traces of errors.
 	
 ##to install :
 
@@ -27,6 +28,11 @@ to use simply require lograp and use it like you do winston
 	var logger = require("lograp")();
 	logger.info("some text"); // the message will be "INFO: <timestamp> [/path/to/project/src/module.js] - some text"
 
+if you pass an error object to the logging function, the stack trace will be attached to the log.
+``` js
+
+	var logger = require("lograp")();
+	logger.error("erorr text",new Error("some error")) // will out put "error: <timestamp> [path] - some error\n\t Error: some error \n\t stack trace ...
 
 ###Configuration
 you can configure lograp to use a custom winston logger, however you must do so prior to initiating the logger for the first time.
