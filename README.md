@@ -16,7 +16,7 @@ Currently it:
 
 	npm install winston
 	npm install lograp
-
+```
 note that lograp does not come with winston built in. you must have it in your path inorder to use it.
 
 ##usage:
@@ -27,13 +27,13 @@ to use simply require lograp and use it like you do winston
 	//---- module in /path/to/project/src/module.js
 	var logger = require("lograp")();
 	logger.info("some text"); // the message will be "INFO: <timestamp> [/path/to/project/src/module.js] - some text"
-
+```
 if you pass an error object to the logging function, the stack trace will be attached to the log.
 ``` js
 
 	var logger = require("lograp")();
 	logger.error("erorr text",new Error("some error")) // will out put "error: <timestamp> [path] - some error\n\t Error: some error \n\t stack trace ...
-
+```
 ###Configuration
 you can configure lograp to use a custom winston logger, however you must do so prior to initiating the logger for the first time.
 ``` js
@@ -46,7 +46,7 @@ you can configure lograp to use a custom winston logger, however you must do so 
 	var logger = require("lograp")()
 	logger.info
 
-
+```
 you can provide lograp with a root path so that module names logged will not be relative to the root path.
 ``` js
 
@@ -57,7 +57,7 @@ you can provide lograp with a root path so that module names logged will not be 
 	//--- module in /path/to/project/src/module.js
 	var logger = require("lograp")()
 	logger.info("some text") // the message will be "INFO: <timestamp> [src/module.js] - some text"
-
+```
 
 Planned functionality:
 * add express request log middleware
